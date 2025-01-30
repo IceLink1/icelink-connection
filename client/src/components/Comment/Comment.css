@@ -1,0 +1,21 @@
+.Comment {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  padding: 10px;
+  margin: 20px;
+}
+.Comment__content {
+  display: flex;
+  flex-direction: column;
+padding-left: 20px;
+}
+.Comment__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.Comment__comment {
+  border-bottom: 2px solid var(--white-color);
+  padding: 10px 0px;
+}
