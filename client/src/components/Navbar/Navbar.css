@@ -9,12 +9,13 @@ nav {
   font-weight: 600;
 }
 .content_navbar {
-  background: linear-gradient(
+  /* background: linear-gradient(
     174deg,
     rgba(0, 0, 0, 0.5) 0%,
     rgba(255, 255, 255, 0.5) 48%,
     rgba(0, 0, 0, 0.5) 100%
-  );
+  ); */
+  background: var(--grey-color);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
   padding: 0px 20px;
@@ -37,6 +38,8 @@ nav li {
   height: 50px;
 }
 nav a {
+  /* background: var(--grey-color); */
+  border-radius: 10px;
   transition: var(--tansition-time);
   height: 100%;
   padding: 0 30px;

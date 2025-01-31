@@ -7,6 +7,7 @@
     align-items: center;
 }
 .Users__content{
+    margin: 30px 0px;
     width: 90%;
     height: 80%;
     display: grid;
@@ -18,13 +19,13 @@
 }
 .Users__data{
     height: 90%;
-    margin: 5% 0px;
+    width: 90%;
     padding: 40px 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.Users__avatar{
+.Users__avatar img{
     margin: 5%;
     width: 90%;
     height: 90%;
@@ -37,5 +38,8 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
     }
-    
+    .Users__data{
+        padding: 20px 10px;
+    }
+
 }

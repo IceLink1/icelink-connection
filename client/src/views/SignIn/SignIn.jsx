@@ -37,11 +37,11 @@ export default function Login() {
             setCookie("token", res.payload.token);
           }
         } catch (error) {
-          alert(error.message);
+          alert("Неверный логин или пароль");
         }
       });
     } else {
-      alert("Password and comfirm password must be the same");
+      alert("Неверный логин или пароль или пароли не совпадают, или пароль должен быть больше 5 символов");
     }
   };
 

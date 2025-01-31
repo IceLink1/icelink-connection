@@ -9,6 +9,7 @@ import Profile from "../views/Profile/Profile";
 import { useSelector } from "react-redux";
 import Admin from "../views/Admin/Admin";
 import Users from "../views/Users/Users";
+import EditPost from "../views/Posts/EditPost/Edit";
 
 export default function MainRouter() {
   const { isAuth, userData } = useSelector((state) => state.auth);
@@ -24,6 +25,7 @@ export default function MainRouter() {
             <Route path="/admin" element={<Admin />} />
           )}
           <Route path="/profile" element={<Profile />} />
+          <Route path="/edit/:id" element={<EditPost />} />
         </>
       ) : (
         <>

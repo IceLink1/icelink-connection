@@ -3,6 +3,7 @@ import "./PostItem.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Link } from "react-router-dom";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
+import { useSelector } from "react-redux";
 
 export default function PostItem({
   commentCount,
@@ -12,17 +13,23 @@ export default function PostItem({
   image,
   title,
   text,
+  authorId,
   tags = ["news"],
 }) {
+  const { userData } = useSelector((state) => state.auth);
+
   return (
     <div className="PostItem">
       {image && (
-          <img
-            loading="lazy"
-            src={image}
-            alt="Preview"
-            className="PostItem__preview"
-          />
+        <img
+          loading="lazy"
+          src={image}
+          alt="Preview"
+          className="PostItem__preview"
+        />
+      )}
+      {userData._id == authorId && (
+        <p>Your Post</p>
       )}
       <div className="PostItem_content">
         <img src={avatar} alt="avatar" className="PostItem_avatar" />

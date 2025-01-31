@@ -23,11 +23,22 @@ export default function Users() {
         <h1>{error}</h1>
       ) : (
         <div className="Users__content">
-          <img src={someUserData.avatarUrl} alt="" className="Users__avatar" />
+          <div className="Users__avatar">
+            <img src={someUserData.avatarUrl} alt="" />
+          </div>
           <div className="Users__data">
             <h2>Name: {someUserData.fullName}</h2>
             <h3>Email: {someUserData.email}</h3>
-            <p>created: {someUserData.createdAt}</p>
+            <p>Created: {someUserData.createdAt}</p>
+            <p>
+              Bio: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Quos sapiente rerum labore explicabo quis pariatur molestias
+              excepturi neque alias assumenda deserunt ratione quas, quia
+              praesentium quo reprehenderit. Ipsum, nam optio?
+            </p>
+            <p>Location: Earth</p>
+            <p>Sex: Famel</p>
+            <p>Followers: 0</p>
             <Button>Follow</Button>
           </div>
         </div>

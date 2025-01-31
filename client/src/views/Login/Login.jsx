@@ -31,8 +31,12 @@ export default function Login() {
           if (res.payload.token) {
             setCookie("token", res.payload.token);
           }
-        } catch (error) {}
+        } catch (error) {
+          alert("Неверный логин или пароль");
+        }
       });
+    }else{
+      alert("Неверный логин или пароль");
     }
   };
   return (

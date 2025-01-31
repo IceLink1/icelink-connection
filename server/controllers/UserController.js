@@ -9,6 +9,14 @@ export const register = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password, salt);
 
+    const checkUser = await UserModel.find({ email: req.body.email });
+    
+    if (checkUser.length) {
+      return res.status(400).json({
+        message: "Пользователь с таким email уже существует",
+      });
+    }
+
     const doc = new UserModel({
       email: req.body.email,
       fullName: req.body.fullName,

@@ -20,7 +20,7 @@ export default function Home() {
                 GitHub
               </Button>
             </Link>
-            <Link to={"https://github.com/IceLink1"} target="_blank">
+            <Link to={""} target="_blank">
               <Button>
                 <TelegramIcon /> Telegram
               </Button>
@@ -49,7 +49,7 @@ export default function Home() {
               consectetur adipisicing elit. Velit, cumque ullam commodi
               voluptates aliquid dolor laudantium tempora tempore architecto!
             </p>
-            <Link to="https://islomjalilov.vercel.app" target="_blank">
+            <Link to="" target="_blank">
               <Button>More</Button>
             </Link>
           </div>

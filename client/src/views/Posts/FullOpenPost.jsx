@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import Markdown from "react-markdown";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
@@ -22,7 +22,7 @@ export default function FullOpenPost() {
   const dispatch = useDispatch();
   const { openPost, isLoading } = useSelector((state) => state.post);
   const COMMENTS = useSelector((state) => state.comment);
-  const { isAuth } = useSelector((state) => state.auth);
+  const { isAuth, userData } = useSelector((state) => state.auth);
   const [cookies, setCookies, removeCookies] = useCookies(["token"]);
 
   const getComments = useCallback(async (data) => {
@@ -63,7 +63,7 @@ export default function FullOpenPost() {
       alert("Comment length must be longer than 3 characters");
     }
   };
-  
+
   return (
     <div className="FullOpenPost">
       {isLoading || COMMENTS.isLoading ? (
@@ -80,6 +80,11 @@ export default function FullOpenPost() {
             </Link>
             <div className="FullOpenPost__content">
               <div>
+                {openPost._id && openPost.user._id == userData._id && (
+                  <Link to={`/edit/${openPost._id}`}>
+                  Edit Post
+                  </Link>
+                )}
                 <p>{openPost.user.fullName}</p>
                 <p>{openPost.createdAt}</p>
               </div>
@@ -110,9 +115,7 @@ export default function FullOpenPost() {
             {postComments.map((e, i) => (
               <Comment
                 key={e._id}
-                avatarUrl={
-                  e.user.avatarUrl
-                }
+                avatarUrl={e.user.avatarUrl}
                 userId={e.user._id}
                 fullName={e.user.fullName}
                 text={e.text}

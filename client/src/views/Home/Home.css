@@ -78,13 +78,16 @@
 }
 
 @media (max-width: 600px) {
+  .Home__2__section {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media (max-width:1200px) {
   .Home__links {
     flex-direction: column;
     align-items: center;
     gap: 40px;
-  }
-  .Home__2__section {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
   }
 }

@@ -37,6 +37,7 @@ export default function Posts() {
                 <PostItem
                   author={e.user.fullName}
                   avatar={e.user.avatarUrl}
+                  authorId={e.user._id}
                   image={e.imageUrl}
                   title={e.title}
                   text={e.text}
