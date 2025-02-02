@@ -163,7 +163,16 @@ export const getMe = async (req, res) => {
 export const getById = async (req, res) => {
   try {
     const id = req.params.id;
-    const { fullName, email, avatarUrl, createdAt } = await UserModel.findById({
+    const {
+      sex,
+      location,
+      bio,
+      birthday,
+      fullName,
+      email,
+      avatarUrl,
+      createdAt,
+    } = await UserModel.findById({
       _id: id,
     });
 
@@ -173,7 +182,16 @@ export const getById = async (req, res) => {
       });
     }
 
-    res.json({ fullName, email, avatarUrl, createdAt });
+    res.json({
+      sex,
+      location,
+      bio,
+      birthday,
+      fullName,
+      email,
+      avatarUrl,
+      createdAt,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json({

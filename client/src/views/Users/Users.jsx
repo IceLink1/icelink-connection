@@ -30,15 +30,10 @@ export default function Users() {
             <h2>Name: {someUserData.fullName}</h2>
             <h3>Email: {someUserData.email}</h3>
             <p>Created: {someUserData.createdAt}</p>
-            <p>
-              Bio: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Quos sapiente rerum labore explicabo quis pariatur molestias
-              excepturi neque alias assumenda deserunt ratione quas, quia
-              praesentium quo reprehenderit. Ipsum, nam optio?
-            </p>
-            <p>Location: Earth</p>
-            <p>Sex: Famel</p>
-            <p>Birth-day: 2025-02-21</p>
+            <p>Bio: {someUserData.bio || "No bio available"}</p>
+            <p>Location: {someUserData.location || "Earth"}</p>
+            <p>Sex: {someUserData.sex || "No available"}</p>
+            <p>Birth-day: {someUserData.birthday || "No available"}</p>
           </div>
         </div>
       )}

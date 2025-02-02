@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import Admin from "../views/Admin/Admin";
 import Users from "../views/Users/Users";
 import EditPost from "../views/Posts/EditPost/Edit";
+import More from "../views/More/More";
 
 export default function MainRouter() {
   const { isAuth, userData } = useSelector((state) => state.auth);
@@ -17,6 +18,7 @@ export default function MainRouter() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/posts" element={<Posts />} />
+      <Route path="/more" element={<More />} />
       <Route path="/posts/:id" element={<FullOpenPost />} />
       <Route path="/users/:id" element={<Users />} />
       {isAuth ? (

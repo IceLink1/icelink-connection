@@ -4,7 +4,7 @@ import photo from "../../assets/myPhoto.jpg";
 import { Link } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import "./Home.css";
 
 export default function Home() {
@@ -20,14 +20,14 @@ export default function Home() {
                 GitHub
               </Button>
             </Link>
-            <Link to={""} target="_blank">
+            <Link to={"https://t.me/icelink39"} target="_blank">
               <Button>
                 <TelegramIcon /> Telegram
               </Button>
             </Link>
-            <Link to={"https://github.com/IceLink1"} target="_blank">
+            <Link to={"https://www.instagram.com/icelinko2/?igsh=eG10NnN2YzVyM2cw#"} target="_blank">
               <Button>
-                <FacebookIcon />
+                <InstagramIcon />
                 Facebook
               </Button>
             </Link>
@@ -49,7 +49,7 @@ export default function Home() {
               consectetur adipisicing elit. Velit, cumque ullam commodi
               voluptates aliquid dolor laudantium tempora tempore architecto!
             </p>
-            <Link to="" target="_blank">
+            <Link to="/more">
               <Button>More</Button>
             </Link>
           </div>
