@@ -36,10 +36,15 @@
 @media (max-width: 790px){
     .Users__content{
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 2fr 1fr;
     }
     .Users__data{
         padding: 20px 10px;
     }
 
+}
+@media (max-width: 610px){
+    .Users__content{
+        grid-template-rows: 1fr 1fr;
+    }
 }

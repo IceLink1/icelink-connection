@@ -10,7 +10,7 @@ export const register = async (req, res) => {
     const hash = await bcrypt.hash(password, salt);
 
     const checkUser = await UserModel.find({ email: req.body.email });
-    
+
     if (checkUser.length) {
       return res.status(400).json({
         message: "Пользователь с таким email уже существует",
@@ -98,7 +98,7 @@ export const login = async (req, res) => {
 export const update = async (req, res) => {
   try {
     const token = req.headers.authorization;
-    const { fullName, avatarUrl } = req.body;
+    const { sex, location, bio, birthday, fullName, avatarUrl } = req.body;
 
     jwt.verify(token, process.env.JWT, async (err, user) => {
       if (err) {
@@ -114,16 +114,20 @@ export const update = async (req, res) => {
 
       const data = await UserModel.findByIdAndUpdate(
         user._id,
-        { fullName, avatarUrl },
+        { sex, location, bio, birthday, fullName, avatarUrl },
         { new: true }
       );
 
       return res.status(201).json({
         avatarUrl: data.avatarUrl,
+        birthday: data.birthday,
         fullName: data.fullName,
+        location: data.location,
         email: data.email,
         role: data.role,
+        bio: data.bio,
         _id: data._id,
+        sex: data.sex,
         createdAt: data.createdAt,
       });
     });

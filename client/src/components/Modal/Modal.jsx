@@ -20,4 +20,3 @@ export default function Modal({ isOpen, setIsOpen, children }) {
     </>
   );
 }
-//onClick={setIsOpen(!isOpen)}

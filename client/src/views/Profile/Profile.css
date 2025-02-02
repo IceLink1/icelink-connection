@@ -1,6 +1,6 @@
 .Profile {
   width: 100%;
-  min-height: 100vh;
+  min-height: 120vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@
 .Profile__user__data {
   border: 2px solid var(--white-color);
   box-shadow: 0px 10px 50px var(--secondary-color);
-  width: 350px;
+  max-width: 400px;
   min-height: 450px;
   background: var(--black-color);
   display: flex;
@@ -16,6 +16,7 @@
   gap: 20px;
   padding: 30px;
   align-items: center;
+  word-break: break-all;
   & div {
     display: flex;
     flex-direction: column;

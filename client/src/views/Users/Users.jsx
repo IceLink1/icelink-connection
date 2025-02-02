@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Users.css";
 import { useParams } from "react-router-dom";
 import { getById } from "../../store/reducers/AuthReducers/AuthActions";
@@ -38,8 +38,7 @@ export default function Users() {
             </p>
             <p>Location: Earth</p>
             <p>Sex: Famel</p>
-            <p>Followers: 0</p>
-            <Button>Follow</Button>
+            <p>Birth-day: 2025-02-21</p>
           </div>
         </div>
       )}

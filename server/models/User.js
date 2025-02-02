@@ -24,6 +24,21 @@ const UserSchema = new mongoose.Schema(
       default:
         "https://t3.ftcdn.net/jpg/09/49/33/40/360_F_949334010_NkTcv6gckVYZSI8MbhUITBqAJiEGiYtG.jpg",
     },
+    bio: {
+      type: String,
+    },
+    location: {
+      type: String,
+      default: "Earth",
+    },
+    sex: {
+      type: String,
+      default: "",
+    },
+    birthday: {
+      type: String,
+      default: "",
+    },
   },
   {
     timestamps: true,

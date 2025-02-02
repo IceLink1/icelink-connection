@@ -43,7 +43,14 @@ export const update = createAsyncThunk("/auth/update", async (data) => {
   try {
     const respone = await iceAxios.put(
       "/auth/update",
-      { fullName: data.fullName, avatarUrl: data.avatarUrl },
+      {
+        bio: data.bio,
+        location: data.location,
+        sex: data.sex,
+        birthday: data.birthday,
+        fullName: data.fullName,
+        avatarUrl: data.avatarUrl,
+      },
       {
         headers: { authorization: data.token },
       }
