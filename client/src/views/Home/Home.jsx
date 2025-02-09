@@ -31,7 +31,7 @@ export default function Home() {
             >
               <Button>
                 <InstagramIcon />
-                Facebook
+                Instagram
               </Button>
             </Link>
           </div>

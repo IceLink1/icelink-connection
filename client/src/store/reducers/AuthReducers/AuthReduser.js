@@ -34,8 +34,9 @@ const AuthSlice = createSlice({
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
-      })
+      });
 
+    builder
       .addCase(register.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = "";
@@ -50,8 +51,9 @@ const AuthSlice = createSlice({
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
-      })
+      });
 
+    builder
       .addCase(check.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = "";
@@ -66,8 +68,9 @@ const AuthSlice = createSlice({
       .addCase(check.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
-      })
+      });
 
+    builder
       .addCase(update.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = "";
@@ -82,8 +85,9 @@ const AuthSlice = createSlice({
       .addCase(update.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
-      })
+      });
 
+    builder
       .addCase(getById.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = "";
