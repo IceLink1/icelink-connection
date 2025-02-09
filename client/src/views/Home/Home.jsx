@@ -25,7 +25,10 @@ export default function Home() {
                 <TelegramIcon /> Telegram
               </Button>
             </Link>
-            <Link to={"https://www.instagram.com/icelinko2/?igsh=eG10NnN2YzVyM2cw#"} target="_blank">
+            <Link
+              to={"https://www.instagram.com/icelinko2/?igsh=eG10NnN2YzVyM2cw#"}
+              target="_blank"
+            >
               <Button>
                 <InstagramIcon />
                 Facebook
@@ -42,12 +45,11 @@ export default function Home() {
           <div>
             <h1>Salohiddin</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
-              mollitia voluptatibus qui esse error illo ipsum exercitationem,
-              velit hic necessitatibus quae. Qui dolorem quidem placeat quisquam
-              sunt consequuntur nobis necessitatibus! Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Velit, cumque ullam commodi
-              voluptates aliquid dolor laudantium tempora tempore architecto!
+              Я веб-разработчик с более чем годом опыта, активно работаю над
+              множеством пет-проектов. Несмотря на ограниченный опыт в
+              компаниях, я обладаю глубокими знаниями и навыками в
+              веб-разработке, что позволяет мне создавать качественные и
+              эффективные решения.
             </p>
             <Link to="/more">
               <Button>More</Button>

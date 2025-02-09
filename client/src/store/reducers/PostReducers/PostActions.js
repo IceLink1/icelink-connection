@@ -38,3 +38,24 @@ export const createPost = createAsyncThunk("/posts/create", async (data) => {
     console.error(error);
   }
 });
+
+
+export const updatePost = createAsyncThunk("/posts/update", async (data) => {
+  try {
+    const respone = await iceAxios.patch(
+      `/posts/${data._id}`,
+      {
+        imageUrl: data.imageUrl,
+        title: data.title,
+        text: data.text,
+        tags: data.tags,
+      },
+      {
+        headers: { authorization: data.token },
+      }
+    );
+    return respone.data;
+  } catch (error) {
+    console.error(error);
+  }
+});

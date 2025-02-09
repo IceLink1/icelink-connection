@@ -4,21 +4,20 @@ import multer from "multer";
 import cors from "cors";
 import mongoose from "mongoose";
 import { configDotenv } from "dotenv";
-configDotenv();
-
+import { handleValidationErrors, checkAuth } from "./utils/index.js";
 import {
   registerValidation,
   loginValidation,
   postCreateValidation,
 } from "./validations.js";
-
-import { handleValidationErrors, checkAuth } from "./utils/index.js";
-
 import {
   UserController,
   PostController,
   CommentController,
 } from "./controllers/index.js";
+configDotenv();
+
+
 
 mongoose
   .connect(process.env.MONGO_URL)

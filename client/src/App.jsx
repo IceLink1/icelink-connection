@@ -11,12 +11,15 @@ function App() {
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const dispatch = useDispatch();
   const { isAuth } = useSelector((state) => state.auth);
+  const { ModalIsOpen } = useSelector((state) => state.app);
 
+  
   useEffect(() => {
     if (cookies.token) {
       dispatch(check(cookies.token))
     }
   }, [isAuth]);
+
   return (
     <main>
       <Navbar />

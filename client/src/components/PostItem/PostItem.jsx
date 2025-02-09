@@ -28,9 +28,7 @@ export default function PostItem({
           className="PostItem__preview"
         />
       )}
-      {userData._id == authorId && (
-        <p>Your Post</p>
-      )}
+
       <div className="PostItem_content">
         <img src={avatar} alt="avatar" className="PostItem_avatar" />
         <div className="PostItem_data">
@@ -51,6 +49,7 @@ export default function PostItem({
             </div>
           </h4>
         </div>
+        {userData._id == authorId && <b>Your Post</b>}
       </div>
     </div>
   );

@@ -19,7 +19,7 @@
   padding: 15px;
   padding-top: 30px;
   display: grid;
-  grid-template-columns: 45px 1fr;
+  grid-template-columns: 45px 1fr 45px;
 }
 .PostItem_data {
   display: flex;

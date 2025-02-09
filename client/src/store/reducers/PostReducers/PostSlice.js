@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createPost, getPosts, getById } from "./PostActions";
+import { createPost, getPosts, getById, updatePost } from "./PostActions";
 
 const initialState = {
   isLoading: false,
   posts: [],
-  openPost: {},
+  openPost: {
+    tags: [],
+  },
   pagination: {
     total: 1,
     page: 1,
@@ -51,7 +53,8 @@ const PostSlice = createSlice({
         state.isLoading = false;
         state.error = action.error.message;
       })
-      
+
+    builder
       .addCase(createPost.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = "";
@@ -62,7 +65,20 @@ const PostSlice = createSlice({
       .addCase(createPost.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
-      });
+      })
+
+    builder
+      .addCase(updatePost.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = "";
+      })
+      .addCase(updatePost.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updatePost.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
   },
 });
 

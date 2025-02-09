@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Markdown from "react-markdown";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { useCookies } from "react-cookie";
 import { createComments } from "../../store/reducers/CommentReducers/commentActions";
+import BorderColorIcon from '@mui/icons-material/BorderColor';
 
 export default function FullOpenPost() {
   const { id } = useParams();
@@ -80,11 +81,6 @@ export default function FullOpenPost() {
             </Link>
             <div className="FullOpenPost__content">
               <div>
-                {openPost._id && openPost.user._id == userData._id && (
-                  <Link to={`/edit/${openPost._id}`}>
-                  Edit Post
-                  </Link>
-                )}
                 <p>{openPost.user.fullName}</p>
                 <p>{openPost.createdAt}</p>
               </div>
@@ -109,6 +105,9 @@ export default function FullOpenPost() {
                 </div>
               </div>
             </div>
+            {openPost._id && openPost.user._id == userData._id && (
+              <Link to={`/edit/${openPost._id}`}><BorderColorIcon fontSize="large"/> Edit</Link>
+            )}
           </div>
           <div className="FullOpenPost__comment">
             <h1>Comments</h1>

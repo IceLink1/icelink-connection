@@ -11,6 +11,7 @@ import Admin from "../views/Admin/Admin";
 import Users from "../views/Users/Users";
 import EditPost from "../views/Posts/EditPost/Edit";
 import More from "../views/More/More";
+import Chat from "../views/Chat/Chat";
 
 export default function MainRouter() {
   const { isAuth, userData } = useSelector((state) => state.auth);
@@ -27,6 +28,7 @@ export default function MainRouter() {
             <Route path="/admin" element={<Admin />} />
           )}
           <Route path="/profile" element={<Profile />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path="/edit/:id" element={<EditPost />} />
         </>
       ) : (

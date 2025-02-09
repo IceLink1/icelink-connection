@@ -28,7 +28,7 @@
 .FullOpenPost__data {
   width: 100%;
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: 50px 1fr 50px;
   grid-gap: 10px;
   padding: 10px;
 }
