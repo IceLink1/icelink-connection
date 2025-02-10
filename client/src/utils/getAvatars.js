@@ -11,4 +11,11 @@ export const images = [
   "https://i.pinimg.com/736x/02/72/3a/02723a455bced2c7e8181f3818cf897d.jpg",
   "https://i.pinimg.com/736x/9a/bf/2b/9abf2badc17a604853b39af68e20eb72.jpg",
   "https://i.pinimg.com/474x/d3/94/22/d39422c995e78d076d556813781ead0c.jpg",
+  "https://i.pinimg.com/736x/a1/29/e0/a129e0fbd1ba328bb527e9bb23523bf9.jpg",
+  "https://i.pinimg.com/736x/45/78/ec/4578ecdfdaa55bc74c507d50d375fbc2.jpg",
+  "https://i.pinimg.com/736x/6a/07/f3/6a07f38df84fe115e56ab01d31518ad5.jpg",
+  "https://i.pinimg.com/736x/4e/12/52/4e12520ee44659c8629a7677bf58c493.jpg",
+  "https://i.pinimg.com/736x/fa/a6/26/faa626bdb63dc63b0e12c35940660e41.jpg",
+  "https://i.pinimg.com/736x/ae/85/27/ae8527bb0d43cfa64c3a250b78dddb59.jpg",
+  "https://i.pinimg.com/736x/dd/96/cb/dd96cb869c2f019e2da45cd6d6ba594f.jpg",
 ];
