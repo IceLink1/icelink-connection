@@ -2,6 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Chat.css";
 import { useSelector } from "react-redux";
 import Loader from "../../components/Loading/Loader";
+import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
+import Comment from "../../components/Comment/Comment";
+import { APIWS } from "../../axios";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -18,7 +22,9 @@ const Chat = () => {
   }, []);
 
   function connect() {
-    socket.current = new WebSocket("ws://localhost:5001");
+    socket.current = new WebSocket(
+     APIWS
+    ); //ws://localhost:5001
 
     socket.current.onopen = () => {
       setConnected(true);
@@ -33,18 +39,20 @@ const Chat = () => {
       const message = JSON.parse(event.data);
       setMessages((prev) => [message, ...prev]);
     };
-    socket.current.onclose = () => {
-      console.log("Socket закрыт");
-    };
-    socket.current.onerror = () => {
-      console.log("Socket произошла ошибка");
-    };
-  }
-
+    // socket.current.onclose = () => {
+    //   console.log("Socket закрыт");
+    // };
+    // socket.current.onerror = () => {
+    //   console.log("Socket произошла ошибка");
+    // };
+  } 
   const sendMessage = async () => {
+    setValue("")
     const message = {
-      message: value,
-      username: userData.fullName,
+      userId: userData._id,
+      avatarUrl: userData.avatarUrl,
+      text: value,
+      fullName: userData.fullName,
       id: Date.now(),
       event: "message",
     };
@@ -56,15 +64,7 @@ const Chat = () => {
       {!connected ? (
         <Loader />
       ) : (
-        <div>
-          <div className="form">
-            <input
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              type="text"
-            />
-            <button onClick={sendMessage}>Отправить</button>
-          </div>
+        <div className="content">
           <div className="messages">
             {messages.map((mess) => (
               <div key={mess.id}>
@@ -74,11 +74,20 @@ const Chat = () => {
                   </div>
                 ) : (
                   <div className="message">
-                    {mess.username}. {mess.message}
+                    <Comment
+                      userId={mess.userId}
+                      avatarUrl={mess.avatarUrl}
+                      fullName={mess.fullName}
+                      text={mess.text}
+                    />
                   </div>
                 )}
               </div>
             ))}
+          </div>
+          <div className="form">
+            <Input value={value} setValue={setValue} type="text" />
+            <Button onClick={sendMessage}>Отправить</Button>
           </div>
         </div>
       )}

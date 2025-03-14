@@ -2,7 +2,7 @@ import React from "react";
 import "./Comment.css";
 import { Link } from "react-router-dom";
 
-export default function Comment({userId, avatarUrl, fullName, createdAt,text }) {
+export default function Comment({userId, avatarUrl, fullName,text }) {
   return (
     <div className="Comment">
       <Link to={`/users/${userId}`}>

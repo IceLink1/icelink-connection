@@ -8,7 +8,7 @@ export const getData = (isAuth) => {
       },
       { title: "Home", path: "/", class: "hideOnMobile" },
       { title: "Posts", path: "/posts", class: "hideOnMobile" },
-      // { title: "chat", path: "/chat", class: "hideOnMobile" },
+      { title: "chat", path: "/chat", class: "hideOnMobile" },
       { title: "Profile", path: "/profile", class: "hideOnMobile" },
     ];
   }
