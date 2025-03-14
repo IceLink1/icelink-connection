@@ -16,6 +16,7 @@ export default function Posts() {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const allPages = getAllPages(pagination.pages);
+  
 
   const GET_ALL_POSTS = useCallback(() => {
     if (pagination.total !== posts.length) {
@@ -27,7 +28,7 @@ export default function Posts() {
 
   useEffect(() => {
     GET_ALL_POSTS();
-  }, [page]);
+  }, [page])
 
   return (
     <div className="Posts">
@@ -72,7 +73,7 @@ export default function Posts() {
           <div className="Posts_pagination">
             <div>
               {allPages.map((e) => (
-                <span key={e} onClick={() => setPage(e)}>
+                <span key={e} onClick={()=>setPage(e)}>
                   {e}
                 </span>
               ))}
