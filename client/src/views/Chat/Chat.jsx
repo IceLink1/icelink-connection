@@ -47,7 +47,6 @@ const Chat = () => {
     // };
   } 
   const sendMessage = async () => {
-    setValue("")
     const message = {
       userId: userData._id,
       avatarUrl: userData.avatarUrl,
@@ -57,6 +56,7 @@ const Chat = () => {
       event: "message",
     };
     socket.current.send(JSON.stringify(message));
+    setValue("")
   };
 
   return (
